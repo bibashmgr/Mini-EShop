@@ -7,10 +7,10 @@ const Navbar = () => {
     return (
         <Nav>
             <NavItems>
-                <NavItem>
+                <NavItem to='/'>
                     <NavLogo>EShop</NavLogo>
                 </NavItem>
-                <NavItem>
+                <NavItem to='/cart'>
                     <NavCart></NavCart>
                 </NavItem>
             </NavItems>
