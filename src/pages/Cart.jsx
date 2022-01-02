@@ -1,10 +1,13 @@
 import React from 'react'
 
+// components
+import CartTable from '../components/CartTable'
+
 const Cart = () => {
     return (
-        <div>
-            This is Cart
-        </div>
+        <>
+            <CartTable></CartTable>
+        </>
     )
 }
 
