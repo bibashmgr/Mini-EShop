@@ -26,7 +26,7 @@ const Products = () => {
                                    <ProductSpecs>
                                        <ProductColor>Color : {product.specs.color}</ProductColor>
                                        <ProductStorage>Storage : {product.specs.internalStorage}</ProductStorage>
-                                       <ProductPrice>Price : Rs {product.price}</ProductPrice>
+                                       <ProductPrice>Price : NRs. {product.price}</ProductPrice>
                                    </ProductSpecs>
                                    <ProductButtonBox>
                                        <ProductButton />
