@@ -9,7 +9,7 @@ export const products = [
             internalStorage: '128GB',
         },
         description: 'IPhone 13 features a ceramic shield front, Super Retina XDR display with True Tone and an A15 Bionic chip.',
-        images: './assets/products/iphone-13.jpg',
+        images: './assets/products/b9cjh7621w.jpg',
     },  
     {
         id: 'xjhl2aq0qj',
@@ -21,7 +21,7 @@ export const products = [
             internalStorage: '256GB',
         },
         description: 'OnePlus 9 features a 6.5-inch FHD+ AMOLED display with a 120Hz refresh rate with Snapdragon 888 5G chipset.',
-        images: './assets/products/oneplus-9.jpg',
+        images: './assets/products/xjhl2aq0qj.jpg',
     }, 
     {
         id: 'kl4z6j4cfb',
@@ -33,6 +33,18 @@ export const products = [
             internalStorage: '128GB',
         },
         description: 'Samsung Galaxy A72 features 6.7-inch Super AMOLED display with a 90Hz refresh rate with Snapdragon 720G SoC chipset.',
-        images: './assets/products/samsung-galaxy-a72.jpg',
+        images: './assets/products/kl4z6j4cfb.jpg',
+    }, 
+    {
+        id: '5xtlx86tze',
+        name: 'Huawei Nova 9 Pro',
+        brand: 'Huawei',
+        price: 70000,
+        specs: {
+            color: 'Black',
+            internalStorage: '128GB',
+        },
+        description: 'Huawei Nova 9 Pro comes with a 6.72-inch touchscreen display powered by a 1.8GHz octa-core Qualcomm Snapdragon 778G processor',
+        images: './assets/products/5xtlx86tze.jpg',
     },  
 ]
