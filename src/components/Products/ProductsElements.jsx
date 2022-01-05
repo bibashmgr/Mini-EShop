@@ -100,6 +100,8 @@ export const ProductPrice = styled.div`
 `
 
 export const ProductButtonBox = styled.div`
+    background-color: #fff;
+    color: #2b2b2b;
     opacity: 0.85;
     width: 100%;
     height: 50px;
@@ -126,4 +128,10 @@ export const ProductButton = styled(BsCartPlus)`
     @media screen and (max-width: 768px) {
         font-size: 1.25rem;
     }
+`
+
+export const AddedText = styled.div`
+    color: #db2e39;
+    font-size: 1rem;
+    font-weight: 500;
 `

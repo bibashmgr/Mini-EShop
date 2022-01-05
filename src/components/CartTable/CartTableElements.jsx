@@ -7,40 +7,53 @@ export const TableContainer = styled.section`
     display: flex;
     justify-content: center;
 `
+
 export const Table = styled.table`
     width: 80%;
     border: none;
     border-collapse: collapse;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 `
+
+export const TableHead = styled.thead``
+
+export const TableBody = styled.tbody``
+
+export const TableFoot = styled.tfoot``
+
 export const TableRow = styled.tr`
-    text-align: center;
-    height: 100px;
+    height: 75px;
 `
-export const TableColumnH = styled.td`
+
+// table-body-columns
+export const TableColumnH = styled.th`
     font-size: 1.1rem;
     font-weight: 600;
 `
 
-export const TableColumn = styled.td`
+// table-body-columns
+export const TableColumnB = styled.td`
+    text-align: center;
     font-size: 1rem;
     font-weight: 500;
 `
 
-export const Counter = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-export const CounterButton = styled.button`
+// table-footer-columns
+export const TableColumnF = styled.td`
+    text-align: center;
     font-size: 1rem;
-    font-weight: 500;
-    background-color: #fff;
-    padding: 10px 15px;
+    font-weight: 600;
+`
+
+// table-buttons
+export const TableButton = styled.span`
+    padding: 10px;
+    background-color: #db2e39;
+    border-radius: 5px;
+    color: #f2f2f2;
+    transition: 0.25s;
     cursor: pointer;
-`
-export const CounterValue = styled.div`
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 20px;
+    &:hover {
+        opacity: 0.8;
+    }
 `

@@ -1,12 +1,20 @@
 import React from 'react';
 
-// components
-import { ProductsContainer, ProductsBox, ProductCard, ProductImageBox, ProductImage, ProductText, ProductName,  ProductDetails, ProductSpecs, ProductColor, ProductStorage, ProductPrice, ProductButtonBox, ProductButton } from './ProductsElements';
+import { useSelector, useDispatch } from 'react-redux';
+
+// elements
+import { ProductsContainer, ProductsBox, ProductCard, ProductImageBox, ProductImage, ProductText, ProductName,  ProductDetails, ProductSpecs, ProductColor, ProductStorage, ProductPrice, ProductButtonBox, ProductButton, AddedText } from './ProductsElements';
 
 // data
 import { products } from '../../utils/products';
 
+// actions
+import { addProduct } from '../../features/Products/productsSlice';
+
 const Products = () => {
+
+    const items = useSelector((state) => state.products.value);
+    const dispatch = useDispatch();
 
     return (
         <ProductsContainer>
@@ -28,8 +36,14 @@ const Products = () => {
                                        <ProductStorage>Storage : {product.specs.internalStorage}</ProductStorage>
                                        <ProductPrice>Price : NRs. {product.price}</ProductPrice>
                                    </ProductSpecs>
-                                   <ProductButtonBox>
-                                       <ProductButton />
+                                   <ProductButtonBox style={{
+                                       pointerEvents: items.find(element => element.id === product.id) ? 'none' : 'all'
+                                   }} onClick={() => {
+                                        dispatch(addProduct(product));
+                                    }}>
+                                        {
+                                            items.find(element => element.id === product.id) ?  <AddedText>Add to Cart</AddedText> : <ProductButton />
+                                        }
                                    </ProductButtonBox>
                                </ProductText>
                            </ProductCard>  
