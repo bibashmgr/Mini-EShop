@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const EmptyContainer = styled.div`
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`
+
 export const TableContainer = styled.section`
     margin-top: 50px;
     margin-bottom: 50px;
@@ -22,7 +30,7 @@ export const TableBody = styled.tbody``
 export const TableFoot = styled.tfoot``
 
 export const TableRow = styled.tr`
-    height: 75px;
+    height: 80px;
 `
 
 // table-body-columns
@@ -46,12 +54,15 @@ export const TableColumnF = styled.td`
 `
 
 // table-buttons
-export const TableButton = styled.span`
+export const TableButton = styled.button`
+    border: none;
+    outline: none;
     padding: 10px;
     background-color: #db2e39;
     border-radius: 5px;
     color: #f2f2f2;
     transition: 0.25s;
+    pointer-events: all;
     cursor: pointer;
     &:hover {
         opacity: 0.8;
