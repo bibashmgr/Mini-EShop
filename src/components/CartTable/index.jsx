@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 // elements:
 import { TableContainer, Table, TableHead, TableRow, TableFoot, TableBody, TableColumnH, TableColumnB, TableColumnF, TableButton, EmptyContainer } from './CartTableElements';
 
+// components:
+import Counter from '../Counter';
+
 // actions:
 import { removeProduct, removeProducts } from '../../features/Products/productsSlice';
 
@@ -39,7 +42,10 @@ const CartTable = () => {
                                             {(index+1)<9 ? '0'+(index+1) : (index+1)}
                                         </TableColumnB>
                                         <TableColumnB>{item.name}</TableColumnB>
-                                        <TableColumnB>01</TableColumnB>
+                                        <TableColumnB>
+                                            {/* counter */}
+                                            <Counter item={item} />
+                                        </TableColumnB>
                                         <TableColumnB>{item.price}</TableColumnB>
                                         <TableColumnB>
                                             <TableButton type='button' onClick={() => { dispatch(removeProduct(item)) }}>Remove</TableButton>
