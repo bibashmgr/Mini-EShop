@@ -1,17 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// data
+import { products } from '../../utils/products';
+
 export const counterSlice = createSlice(
     {
         name: 'counter',
         initialState: {
-            value: []
+            value: products
         },
         reducers: {
             increment: (state, item) => {
-                state.value++;
+                for(let i = 0; i < state.value.length; i++){
+                    if(state.value[i].id === item.payload.id){
+                        state.value[i].quantity++;
+                    }
+                }
             },
-            decrement: (state) => {
-                state.value === 1 ? state.value = 1 : state.value = state.value - 1;
+            decrement: (state, item) => {
+                for(let i = 0; i < state.value.length; i++){
+                    if(state.value[i].id === item.payload.id){
+                        state.value[i].quantity === 1 ? state.value[i].quantity = 1 : state.value[i].quantity = state.value[i].quantity - 1;
+                    }
+                }
             }
         }
     }
