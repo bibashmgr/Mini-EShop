@@ -14,6 +14,7 @@ export const counterSlice = createSlice(
                 for(let i = 0; i < state.value.length; i++){
                     if(state.value[i].id === item.payload.id){
                         state.value[i].quantity++;
+                        state.value[i].price = state.value[i].quantity * state.value[i].defprice;
                     }
                 }
             },
@@ -21,6 +22,7 @@ export const counterSlice = createSlice(
                 for(let i = 0; i < state.value.length; i++){
                     if(state.value[i].id === item.payload.id){
                         state.value[i].quantity === 1 ? state.value[i].quantity = 1 : state.value[i].quantity = state.value[i].quantity - 1;
+                        state.value[i].price = state.value[i].quantity * state.value[i].defprice;
                     }
                 }
             }

@@ -14,7 +14,16 @@ import { removeProduct, removeProducts } from '../../features/Products/productsS
 const CartTable = () => {
 
     const items = useSelector((state) => state.products.value);
+    const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
+
+    const getSum = (total, item) => {
+        for(let i=0; i < items.length; i++){
+            if(item.id === count[i].id){
+                return total + count[i].price;
+            }
+        }
+    }
 
     return (
         <TableContainer>
@@ -46,7 +55,11 @@ const CartTable = () => {
                                             {/* counter */}
                                             <Counter item={item} />
                                         </TableColumnB>
-                                        <TableColumnB>{item.price}</TableColumnB>
+                                        <TableColumnB>
+                                            {
+                                                `NRs. ${(count.find((element) => element.id === item.id)).price}`
+                                            }
+                                        </TableColumnB>
                                         <TableColumnB>
                                             <TableButton type='button' onClick={() => { dispatch(removeProduct(item)) }}>Remove</TableButton>
                                         </TableColumnB>
@@ -60,7 +73,11 @@ const CartTable = () => {
                         <TableRow>
                             <TableColumnF>Total</TableColumnF>
                             <TableColumnF colSpan={2}></TableColumnF>
-                            <TableColumnF>NRs. 300000</TableColumnF>
+                            <TableColumnF>
+                                {
+                                    `NRs. ${items.reduce(getSum, 0)}`
+                                }
+                            </TableColumnF>
                             <TableColumnF>
                                 <TableButton type="button" onClick={() => { dispatch(removeProducts()) }}>Remove all</TableButton>
                             </TableColumnF>
